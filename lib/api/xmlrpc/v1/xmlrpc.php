@@ -20,6 +20,8 @@
  *	
  */
 
+if (phpversion()>="5.2.2") $GLOBALS['HTTP_RAW_POST_DATA'] = file_get_contents("php://input");
+/* this is not to have the "XML RPC only accept POST" message */
 require_once("xmlrpc.class.php");
 
 $XMLRPCServer = new TestlinkXMLRPCServer();
